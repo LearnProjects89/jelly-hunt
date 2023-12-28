@@ -40,7 +40,7 @@ body {
 
 #counter {
   color: red;
-  font-size: 70px;
+  font-size: 30px;
 }
 
 .table {
@@ -48,4 +48,9 @@ body {
   gap: 10px;
   margin-bottom: 10px;
   vertical-align: middle;
+}
+
+.social-links img {
+  width: 15%; 
+  height: auto;
 }
