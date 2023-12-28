@@ -11,18 +11,32 @@ import nine from './assets/table/09.png';
 import bomb from './assets/bomb.jpg';
 import treasure from './assets/treasure.png';
 import wrong from './assets/wrong.jpeg';
+import Github from  './assets/github.png'
 
 import './App.css';
 
 function App() {
 
-  const [result, setResult] = useState('');
+  const [winner, setWinner] = useState(treasure);
+  const [loser, setLoser] = useState(bomb);
+  const [wronger, setWronger] = useState(wrong);
+  const [counter, setCounter] = useState(5);
 
+  
   const handleTreasure = (location) => {
-    if (location === 1) {
-      setResult('You found the treasure!');
+    setCounter(prevCounter => prevCounter - 1);
+    setWinner(Math.floor(Math.random() * 10));
+    setLoser(Math.floor(Math.random() * 10))
+    if (winner === loser) { loser = Math.floor(Math.random() * 10) }
+
+    if (location === winner) {
+      setWinner(winner);
+      alert("You Won!!!");
+    } else if (location === loser) {
+      setLoser(loser);
+      alert("Spongbob is annoyed! Please try again!");
     } else {
-      setResult('Try another location.');
+      setWronger(wronger);
     }
   };
 
@@ -38,7 +52,7 @@ function App() {
         <h2>find jelly, avoid spongbob who asks quastions</h2>
         
         
-        <h2 id="counter">TURNS: 5</h2>
+        <h2 id="counter">TURNS: {counter}</h2>
 
 
         <div id="table" border="1">
@@ -59,8 +73,15 @@ function App() {
             </div>
         </div>
         
-        <p>{result}</p>
+       
         <button type="button" onClick={handleRestartGame}>Restart Game</button>
+        <div className="social-links">
+            <h1 style = {{color: 'lightgreen'}}>Checkout the REPO:</h1> 
+            
+            <a href="https://github.com/XenaSit" target="_blank" rel="ln" className="custom-link">
+                <img src={Github} alt="Github" className="custom-link" />
+            </a>
+        </div>
 
       </div>
     </div>
