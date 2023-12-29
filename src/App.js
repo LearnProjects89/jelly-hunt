@@ -98,7 +98,7 @@ function App() {
         <div className="social-links">
             <h1 style = {{color: 'lightgreen'}}>Checkout the REPO:</h1> 
             
-            <a href="https://github.com/XenaSit" target="_blank" rel="noreferrer" className="custom-link">
+            <a href="https://github.com/LearnProjects89/jelly-hunt" target="_blank" rel="noreferrer" className="custom-link">
                 <img src={Github} alt="Github" className="custom-link" />
             </a>
         </div>
